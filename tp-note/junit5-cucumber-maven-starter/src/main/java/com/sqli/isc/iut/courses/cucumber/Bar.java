@@ -9,6 +9,7 @@ public class Bar {
     public boolean isFull = false;
     private List<Client> clients;
     private List<Command> commands;
+    public boolean billChecked;
     
     public Bar(String name) {
         this.name = name;
@@ -50,6 +51,18 @@ public class Bar {
         for (Command command : commands) {
             if (command.ordered.equals(c)) {
                 command.cocktailFinished = true;
+            }
+        }
+    }
+
+    public void payBill(Client mr_pignon, int i) {
+        for (Command command : commands) {
+            if (command.pays.equals(mr_pignon)) {
+                if (command.price == i) {
+                    billChecked = true;
+                } else {
+                    billChecked = false;
+                }
             }
         }
     }

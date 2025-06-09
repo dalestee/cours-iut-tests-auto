@@ -37,4 +37,22 @@ public class Calculator {
 	public Number value() {
 		return stack.getLast();
 	}
+
+	// Method to subtract two integers
+	public int substract(int i, int i2) {
+		return i - i2;
+	}
+
+	// Method to add two integers
+	public int add(int i, int i2) {
+		return i + i2;
+	}
+
+	// Method to return the current result (value from the stack)
+	public int getResult() {
+		if (stack.isEmpty()) {
+			throw new IllegalStateException("No result available in the stack.");
+		}
+		return stack.getLast().intValue();
+	}
 }
